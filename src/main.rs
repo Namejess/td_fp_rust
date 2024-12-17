@@ -1,3 +1,6 @@
+// Typedef
+type BinaryMathOperation = i8;
+
 
 fn main() {
     // Add
@@ -5,10 +8,25 @@ fn main() {
 
 }
 
-fn add(x:i8, y: i8) -> i8 {
+// Add
+fn add(x:BinaryMathOperation, y: BinaryMathOperation) -> BinaryMathOperation {
     x + y
 }
 
+// Multiply 
+fn multiply(x: BinaryMathOperation, y: BinaryMathOperation) -> BinaryMathOperation {
+    x * y
+}
+
+// Divide 
+fn divide(x: BinaryMathOperation, y: BinaryMathOperation) -> BinaryMathOperation {
+    x / y
+}
+
+// Substract
+fn substract(x: BinaryMathOperation, y: BinaryMathOperation) -> BinaryMathOperation {
+    x - y
+}
 
 #[cfg(test)]
 mod tests {
@@ -18,14 +36,27 @@ mod tests {
     #[test]
     fn test_add() {
         let result = add(2, 2);
-        assert_eq!(result, 2);
+        assert_eq!(result, 4);
     }
 
     #[test]
-    fn another() {
-        panic!("FAIL BON SANG");
+    fn test_multiply(){
+        let result = multiply(2, 3);
+        assert_eq!(result, 6)
     }
-    
+
+    #[test]
+    fn test_divide(){
+        let result = divide(10, 2);
+        assert_eq!(result, 5)
+    }
+
+    #[test]
+    fn test_substract(){
+        let result = substract(23,3);
+        assert_eq!(result, 20)
+    }
+
 
 
 }
